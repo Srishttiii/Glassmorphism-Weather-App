@@ -6,9 +6,7 @@
 <title>Glassmorphism Weather App</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 <style>
-  * {
-    box-sizing: border-box;
-  }
+  * { box-sizing: border-box; }
   body, html {
     height: 100%;
     margin: 0;
@@ -20,135 +18,52 @@
     color: white;
     user-select: none;
   }
-  .app-container {
-    width: 320px;
-  }
+
+  .app-container { width: 320px; }
   .glass-card {
     position: relative;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255,255,255,0.15);
     border-radius: 20px;
     padding: 25px;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255,255,255,0.3);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     text-align: center;
     overflow: hidden;
   }
-  h1 {
-    margin-bottom: 20px;
-    font-weight: 700;
-    font-size: 1.8rem;
-  }
-  .input-group {
-    display: flex;
-    margin-bottom: 10px;
-    gap: 10px;
-    align-items: center;
-  }
-  #city-input {
-    flex-grow: 1;
-    padding: 8px 12px;
-    border-radius: 12px;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    background: rgba(255, 255, 255, 0.25);
-    color: white;
-    transition: background 0.3s;
-  }
-  #city-input::placeholder {
-    color: #ddd;
-  }
-  #city-input:focus {
-    background: rgba(255, 255, 255, 0.4);
-  }
-  #search-btn {
-    width: 45px;
-    font-size: 1.3rem;
-    flex-shrink: 0;
-    padding: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.25);
-    border: none;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  #search-btn:hover {
-    background: rgba(255, 255, 255, 0.45);
-  }
-  #locate-btn {
-    width: 45px;
-    height: 45px;
-    font-size: 1.6rem;
-    background: rgba(255, 255, 255, 0.25);
-    border: none;
-    border-radius: 50%;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s;
-    display: block;
-    margin: 0 auto 20px auto;
-    user-select: none;
-  }
-  #locate-btn:hover {
-    background: rgba(255, 255, 255, 0.45);
-  }
-  .temp-toggle {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-  .temp-toggle button {
-  width: 50px;
-  background: rgba(255, 255, 255, 0.25);
-  border: none;
-  border-radius: 12px;
-  padding: 8px 0;
-  font-weight: 600;
-  color: white;
-  cursor: pointer;
-  transition: background 0.3s, color 0.3s;
-  user-select: none;
-}
+  h1 { margin-bottom: 20px; font-weight:700; font-size:1.8rem; }
 
-.temp-toggle button.active {
-  background: rgba(255, 255, 255, 0.6);
-  color: #333;
-  font-weight: 700;
-}
-  .weather-info h2 {
-    font-size: 1.5rem;
-    margin: 0 0 10px;
+  .input-group { display:flex; margin-bottom:10px; gap:10px; align-items:center; }
+  #city-input {
+    flex-grow:1; padding:8px 12px; border-radius:12px; border:none; outline:none; font-size:1rem;
+    background: rgba(255,255,255,0.25); color:white; transition:background .3s;
   }
-  .temp {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 8px;
+  #city-input::placeholder { color:#ddd; }
+  #city-input:focus { background: rgba(255,255,255,0.4); }
+
+  #search-btn { width:45px; font-size:1.3rem; padding:8px; border-radius:12px; background: rgba(255,255,255,0.25); border:none; color:white; cursor:pointer;}
+  #search-btn:hover { background: rgba(255,255,255,0.45); }
+
+  #locate-btn {
+    width:45px; height:45px; font-size:1.6rem; background: rgba(255,255,255,0.25);
+    border:none; border-radius:50%; color:white; cursor:pointer; display:block; margin:0 auto 20px auto;
   }
-  #description {
-    font-size: 1.2rem;
-    font-style: italic;
-    margin-bottom: 10px;
-    text-transform: capitalize;
+  #locate-btn:hover { background: rgba(255,255,255,0.45); }
+
+  .temp-toggle { margin-bottom:20px; display:flex; justify-content:center; gap:10px; }
+  .temp-toggle button {
+    width:50px; background: rgba(255,255,255,0.25); border:none; border-radius:12px; padding:8px 0; font-weight:600; color:white; cursor:pointer;
   }
-  #details {
-    display: flex;
-    justify-content: space-around;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-  }
-  #time {
-    font-size: 0.9rem;
-    font-weight: 500;
-    opacity: 0.8;
-  }
-  /* Weather animation container */
+  .temp-toggle button.active { background: rgba(255,255,255,0.6); color:#333; font-weight:700; }
+
+  .weather-info h2 { font-size:1.5rem; margin:0 0 10px; }
+  .temp { font-size:3rem; font-weight:700; margin-bottom:8px; }
+  #description { font-size:1.2rem; font-style:italic; margin-bottom:10px; text-transform:capitalize; }
+  #details { display:flex; justify-content:space-around; font-size:.9rem; margin-bottom:10px; }
+  #time { font-size:.9rem; font-weight:500; opacity:.8; }
+
+  /* Weather animation container (keeps animations behind content) */
   #weather-animation {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -157,66 +72,86 @@
     overflow: hidden;
     z-index: 0;
   }
+
   /* Clear/Sunny glow */
   .clear-glow {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    background: radial-gradient(circle at center, rgba(255, 223, 93, 0.5), transparent 60%);
-    animation: pulseGlow 3s infinite ease-in-out;
-    filter: blur(40px);
+    position:absolute; width:200%; height:200%; top:-50%; left:-50%;
+    background: radial-gradient(circle at center, rgba(255,223,93,0.5), transparent 60%);
+    animation: pulseGlow 3s infinite ease-in-out; filter: blur(40px);
   }
   @keyframes pulseGlow {
-    0%, 100% { transform: scale(1); opacity: 0.6; }
-    50% { transform: scale(1.2); opacity: 0.9; }
+    0%,100% { transform: scale(1); opacity:0.6; } 50% { transform: scale(1.2); opacity:0.9; }
   }
-  /* Raindrop animation container */
-  .rain {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-  }
-  .raindrop {
-    position: absolute;
-    bottom: 100%;
-    width: 2px;
-    height: 15px;
-    background: rgba(173, 216, 230, 0.6);
-    border-radius: 50%;
-    animation: fall 1s linear infinite;
-    opacity: 0.7;
-  }
-  @keyframes fall {
-    to {
-      transform: translateY(120%);
-      opacity: 0;
-    }
-  }
-  /* Clouds animation */
-  .clouds {
-  background-image: url("data:image/svg+xml;utf8,\
-  <svg xmlns='http://www.w3.org/2000/svg' width='800' height='150' viewBox='0 0 800 150'>\
-    <g fill='%23ffffff' opacity='0.2'>\
-      <ellipse cx='100' cy='60' rx='80' ry='30'/>\
-      <ellipse cx='200' cy='50' rx='70' ry='25'/>\
-      <ellipse cx='300' cy='65' rx='90' ry='28'/>\
-      <ellipse cx='450' cy='60' rx='85' ry='30'/>\
-      <ellipse cx='600' cy='55' rx='75' ry='26'/>\
-      <ellipse cx='750' cy='60' rx='88' ry='29'/>\
-    </g>\
-  </svg>");
-  background-repeat: repeat-x;
-  background-size: contain;
-  animation: moveClouds 30s linear infinite;
-}
 
-@keyframes moveClouds {
-  0% { background-position: 0 0; }
-  100% { background-position: 100% 0; }
-}
+  /* Rain */
+  .rain { position:absolute; width:100%; height:100%; overflow:visible; }
+  .raindrop { position:absolute; bottom:100%; width:2px; height:15px; background: rgba(173,216,230,0.6); border-radius:50%; animation: fall 1s linear infinite; opacity:0.7; }
+  @keyframes fall { to { transform: translateY(120%); opacity:0; } }
+
+  /* --------- Fluffy cloud layers (inline SVG) --------- */
+  /* background slow layer */
+  .clouds-deep {
+    position:absolute; width:200%; height:120%; top:5%; left:0;
+    pointer-events:none; opacity:0.45; filter: blur(3px);
+    background-repeat:repeat-x; background-size: contain;
+    animation: moveCloudsDeep 60s linear infinite;
+    z-index: 0;
+    background-image: url("data:image/svg+xml;utf8,\
+    <svg xmlns='http://www.w3.org/2000/svg' width='1200' height='200' viewBox='0 0 1200 200'>\
+      <defs>\
+        <linearGradient id='g1' x1='0' x2='1' y1='0' y2='0'>\
+          <stop offset='0' stop-color='%23ffffff' stop-opacity='0.18'/>\
+          <stop offset='1' stop-color='%23ffffff' stop-opacity='0.06'/>\
+        </linearGradient>\
+      </defs>\
+      <g fill='url(%23g1)'>\
+        <ellipse cx='120' cy='80' rx='160' ry='48' />\
+        <ellipse cx='320' cy='70' rx='130' ry='40' />\
+        <ellipse cx='520' cy='85' rx='170' ry='50' />\
+        <ellipse cx='820' cy='78' rx='150' ry='46' />\
+        <ellipse cx='1040' cy='72' rx='120' ry='38' />\
+      </g>\
+    </svg>");
+  }
+
+  @keyframes moveCloudsDeep {
+    0% { background-position: 0 0; }
+    100% { background-position: 1200px 0; }
+  }
+
+  /* foreground faster layer (more defined, slightly brighter) */
+  .clouds {
+    position:absolute; width:200%; height:110%; top:10%; left:0;
+    pointer-events:none; opacity:0.6; filter: blur(1.6px);
+    background-repeat:repeat-x; background-size: contain;
+    animation: moveClouds 30s linear infinite;
+    z-index: 1;
+    background-image: url("data:image/svg+xml;utf8,\
+    <svg xmlns='http://www.w3.org/2000/svg' width='1200' height='180' viewBox='0 0 1200 180'>\
+      <defs>\
+        <linearGradient id='g2' x1='0' x2='1' y1='0' y2='0'>\
+          <stop offset='0' stop-color='%23ffffff' stop-opacity='0.28'/>\
+          <stop offset='1' stop-color='%23ffffff' stop-opacity='0.08'/>\
+        </linearGradient>\
+      </defs>\
+      <g fill='url(%23g2)'>\
+        <ellipse cx='80' cy='60' rx='120' ry='36' />\
+        <ellipse cx='240' cy='48' rx='95' ry='30' />\
+        <ellipse cx='420' cy='68' rx='130' ry='38' />\
+        <ellipse cx='620' cy='56' rx='110' ry='34' />\
+        <ellipse cx='880' cy='62' rx='140' ry='40' />\
+        <ellipse cx='1060' cy='50' rx='100' ry='32' />\
+      </g>\
+    </svg>");
+  }
+
+  @keyframes moveClouds {
+    0% { background-position: 0 0; }
+    100% { background-position: 1200px 0; }
+  }
+
+  /* ensure card content sits above animations */
+  .glass-card > * { position: relative; z-index: 2; }
 </style>
 </head>
 <body>
@@ -242,9 +177,12 @@
         </div>
         <div id="time">--</div>
       </div>
+
+      <!-- animation container: JS will insert layers inside this -->
       <div id="weather-animation"></div>
     </div>
   </div>
+
   <script>
     const apiKey = '5c23f9749cff4345a8f3718770eddde3'; // your API key
 
@@ -274,13 +212,8 @@
       timeEl.textContent = `Local time: ${hours}:${minutes} ${ampm}`;
     }
 
-    function kelvinToCelsius(k) {
-      return (k - 273.15).toFixed(1);
-    }
-
-    function kelvinToFahrenheit(k) {
-      return ((k - 273.15) * 9/5 + 32).toFixed(1);
-    }
+    function kelvinToCelsius(k) { return (k - 273.15).toFixed(1); }
+    function kelvinToFahrenheit(k) { return ((k - 273.15) * 9/5 + 32).toFixed(1); }
 
     function clearAnimations() {
       weatherAnimationEl.innerHTML = '';
@@ -299,9 +232,7 @@
     function startRain() {
       clearAnimations();
       weatherAnimationEl.classList.add('rain');
-      for(let i = 0; i < 50; i++) {
-        weatherAnimationEl.appendChild(createRaindrop());
-      }
+      for (let i = 0; i < 50; i++) weatherAnimationEl.appendChild(createRaindrop());
     }
 
     function startClearGlow() {
@@ -313,9 +244,14 @@
 
     function startClouds() {
       clearAnimations();
-      const clouds = document.createElement('div');
-      clouds.classList.add('clouds');
-      weatherAnimationEl.appendChild(clouds);
+      // deep (background) layer
+      const deep = document.createElement('div');
+      deep.classList.add('clouds-deep');
+      // foreground layer
+      const front = document.createElement('div');
+      front.classList.add('clouds');
+      weatherAnimationEl.appendChild(deep);
+      weatherAnimationEl.appendChild(front);
     }
 
     function displayWeather(data) {
@@ -329,20 +265,12 @@
       updateTime();
 
       const mainWeather = data.weather[0].main.toLowerCase();
-
-      switch(mainWeather) {
-        case 'clear':
-          startClearGlow();
-          break;
+      switch (mainWeather) {
+        case 'clear': startClearGlow(); break;
         case 'rain':
-        case 'drizzle':
-          startRain();
-          break;
-        case 'clouds':
-          startClouds();
-          break;
-        default:
-          clearAnimations();
+        case 'drizzle': startRain(); break;
+        case 'clouds': startClouds(); break;
+        default: clearAnimations();
       }
     }
 
@@ -387,10 +315,7 @@
     locateBtn.addEventListener('click', () => {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
-          pos => {
-            console.log('Coords:', pos.coords.latitude, pos.coords.longitude);
-            fetchWeatherByCoords(pos.coords.latitude, pos.coords.longitude);
-          },
+          pos => fetchWeatherByCoords(pos.coords.latitude, pos.coords.longitude),
           () => alert('Geolocation permission denied or unavailable.'),
           { enableHighAccuracy: true }
         );
@@ -400,29 +325,20 @@
     });
 
     celsiusBtn.addEventListener('click', () => {
-      isCelsius = true;
-      celsiusBtn.classList.add('active');
-      fahrenheitBtn.classList.remove('active');
+      isCelsius = true; celsiusBtn.classList.add('active'); fahrenheitBtn.classList.remove('active');
       if (currentTempC !== null) tempEl.textContent = `${currentTempC}°`;
     });
 
     fahrenheitBtn.addEventListener('click', () => {
-      isCelsius = false;
-      fahrenheitBtn.classList.add('active');
-      celsiusBtn.classList.remove('active');
+      isCelsius = false; fahrenheitBtn.classList.add('active'); celsiusBtn.classList.remove('active');
       if (currentTempF !== null) tempEl.textContent = `${currentTempF}°`;
     });
 
     window.onload = () => {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
-          pos => {
-            console.log('Coords on load:', pos.coords.latitude, pos.coords.longitude);
-            fetchWeatherByCoords(pos.coords.latitude, pos.coords.longitude);
-          },
-          () => {
-            fetchWeatherByCity('Patna'); // fallback city set to Patna
-          },
+          pos => fetchWeatherByCoords(pos.coords.latitude, pos.coords.longitude),
+          () => fetchWeatherByCity('Patna'),
           { enableHighAccuracy: true }
         );
       } else {
