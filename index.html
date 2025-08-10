@@ -197,22 +197,26 @@
   }
   /* Clouds animation */
   .clouds {
-    position: absolute;
-    width: 200%;
-    height: 100%;
-    background: url('https://i.imgur.com/o3RSKRQ.png') repeat-x;
-    background-size: contain;
-    animation: moveClouds 30s linear infinite;
-    top: 10%;
-    left: 0;
-    pointer-events: none;
-    opacity: 0.5;
-    filter: blur(2px);
-  }
-  @keyframes moveClouds {
-    from { background-position-x: 0; }
-    to { background-position-x: 1000px; }
-  }
+  background-image: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' width='800' height='150' viewBox='0 0 800 150'>\
+    <g fill='%23ffffff' opacity='0.2'>\
+      <ellipse cx='100' cy='60' rx='80' ry='30'/>\
+      <ellipse cx='200' cy='50' rx='70' ry='25'/>\
+      <ellipse cx='300' cy='65' rx='90' ry='28'/>\
+      <ellipse cx='450' cy='60' rx='85' ry='30'/>\
+      <ellipse cx='600' cy='55' rx='75' ry='26'/>\
+      <ellipse cx='750' cy='60' rx='88' ry='29'/>\
+    </g>\
+  </svg>");
+  background-repeat: repeat-x;
+  background-size: contain;
+  animation: moveClouds 30s linear infinite;
+}
+
+@keyframes moveClouds {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 0; }
+}
 </style>
 </head>
 <body>
